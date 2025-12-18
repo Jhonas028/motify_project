@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar Layout</title>
+    <title>landing page</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,11 +14,11 @@
     <!-- Sidebar -->
     <div id="burger-menu"
         class="fixed top-0 left-0 h-full w-64 bg-black shadow-md px-4 py-24 space-y-4 transform -translate-x-full transition-transform duration-300 z-50 font-[Poppins]">
-        <a href="../dashboard/dashboard.html" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
+        <a href="../dashboard/dashboard.html" data-page="/dashboard/dashboard.html" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
             <img src="../Images/icon/ic_dashboard.png" alt="Dashboard Icon" class="w-4 h-4 ">
             Dashboard
         </a>
-        <a href="../inventory/inventory.html" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
+        <a href="../inventory/inventory.html" data-page="/inventory/inventory.html" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
             <img src="../Images/icon/ic_inventory.png" alt="Inventory Icon" class="w-4 h-4">
             Inventory
         </a>
@@ -79,7 +79,14 @@
 
     <!-- Spacer to avoid content hiding under fixed header -->
     <div class="h-20"></div>
-    <script src="sidebar_script.js"></script>
+
+    <!-- Main content with violet background -->
+        <main id="main-content" class="flex-1 p-6 min-h-screen">
+
+        </main>
+
+
+    <script src="index_script.js"></script>
 
 
 </body>
