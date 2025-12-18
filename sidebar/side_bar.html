@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-[Poppins]">
+
+    <!-- Sidebar -->
+    <div id="burger-menu"
+        class="fixed top-0 left-0 h-full w-64 bg-black shadow-md px-4 py-24 space-y-4 transform -translate-x-full transition-transform duration-300 z-50 font-[Poppins]">
+        <a href="../dashboard/dashboard.html" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
+            <img src="../Images/icon/ic_dashboard.png" alt="Dashboard Icon" class="w-4 h-4 ">
+            Dashboard
+        </a>
+        <a href="../inventory/inventory.html" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
+            <img src="../Images/icon/ic_inventory.png" alt="Inventory Icon" class="w-4 h-4">
+            Inventory
+        </a>
+
+        <a href="#" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
+            <img src="../Images/icon/ic_pos.png" alt="Sales & POS Icon" class="w-4 h-4">
+            Sales & POS
+        </a>
+
+        <a href="#" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
+            <img src="../Images/icon/ic_accounting.png" alt="Accounting Icon" class="w-4 h-4">
+            Accounting
+        </a>
+
+        <a href="#" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
+            <img src="../Images/icon/ic_hr.png" alt="HR & Payroll Icon" class="w-4 h-4">
+            HR & Payroll
+        </a>
+
+        <a href="#" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
+            <img src="../Images/icon/ic_reports.png" alt="Reports Icon" class="w-4 h-4">
+            Reports
+        </a>
+
+        <a href="#" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
+            <img src="../Images/icon/ic_accounts.png" alt="Accounts Icon" class="w-4 h-4">
+            Accounts
+        </a>
+
+        <a href="#" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
+            <img src="../Images/icon/ic_settings.png" alt="Settings Icon" class="w-4 h-4">
+            Settings
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex">
+        <!-- Burger button fixed on top-left -->
+        <button id="burger-btn"
+            class="fixed top-6 left-6 z-50 w-8 h-8 flex flex-col justify-center items-center gap-1 focus:outline-none bg-white p-2 rounded shadow-xl">
+            <span class="burger-line block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+            <span class="burger-line block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+            <span class="burger-line block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+        </button>
+    </div>
+
+    <header class="bg-white shadow-md fixed top-0 left-0 right-0 h-20 flex items-center px-4 py-2 z-40">
+        <!-- Optional: Burger button (if you want to toggle sidebar from header) -->
+        <!-- You can remove this if you already have a fixed burger button on the sidebar -->
+        <p class="text-xl font-bold ml-16 sm:block hidden">Welcome back, @username <br><span
+                class="text-sm text-gray-500">Here are today's stats from your physical stores!</span></p>
+
+        <!-- Right side: Profile or actions -->
+        <div class="ml-auto flex items-center space-x-4">
+            <img src="../Images/logo/logo2.jpg" alt="Profile" class="w-12 h-12 rounded-full object-cover">
+        </div>
+    </header>
+
+    <!-- Spacer to avoid content hiding under fixed header -->
+    <div class="h-20"></div>
+    <script src="sidebar_script.js"></script>
+
+
+</body>
+
+</html>
