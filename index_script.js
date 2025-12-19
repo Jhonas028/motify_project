@@ -38,7 +38,57 @@ async function loadPage(page) {
         const res = await fetch(page);
         if (!res.ok) throw new Error("Page not found");
         const html = await res.text();
-        mainContent.innerHTML = html;
+        // Parse the fetched HTML so we can insert only the intended fragment
+        // and execute any <script> tags (browsers don't run scripts inserted via innerHTML).
+        const tmp = document.createElement('div');
+        tmp.innerHTML = html;
+
+        // Remove previously injected dynamic scripts to avoid duplicate handlers
+        document.querySelectorAll('script[data-dynamic="true"]').forEach(s => s.remove());
+
+        // Prefer a page-local fragment (#inventoryMain) if present, otherwise the
+        // fetched <main> or the whole fragment. Also include a page-local <nav>
+        // when present so sub-navs (like Inventory's) are shown.
+        const fragment = tmp.querySelector('#inventoryMain') || tmp.querySelector('main') || tmp;
+        const pageNav = tmp.querySelector('nav');
+
+        // If the fragment itself is the inventory wrapper (#inventoryMain), keep
+        // its outerHTML so the element with that id exists in the document
+        // (scripts rely on document.getElementById('inventoryMain')). Otherwise
+        // insert fragment.innerHTML as before.
+        let contentHTML;
+        if (fragment.id === 'inventoryMain') {
+            contentHTML = (pageNav ? pageNav.outerHTML : '') + fragment.outerHTML;
+        } else {
+            contentHTML = (pageNav ? pageNav.outerHTML : '') + fragment.innerHTML;
+        }
+        mainContent.innerHTML = contentHTML;
+
+        // Execute scripts found in the fetched HTML by appending real <script> nodes.
+        try {
+            const scripts = tmp.querySelectorAll('script');
+            const baseForResolution = window.location.origin + page;
+
+            scripts.forEach(s => {
+                const newScript = document.createElement('script');
+                newScript.setAttribute('data-dynamic', 'true');
+                if (s.src) {
+                    // Resolve relative src against the fetched page URL.
+                    const src = s.getAttribute('src');
+                    try {
+                        newScript.src = new URL(src, baseForResolution).href;
+                    } catch (e) {
+                        newScript.src = src;
+                    }
+                    newScript.async = false;
+                } else {
+                    newScript.textContent = s.textContent;
+                }
+                document.body.appendChild(newScript);
+            });
+        } catch (err) {
+            console.error('Error injecting scripts from fetched page:', err);
+        }
     } catch (err) {
         mainContent.innerHTML = `<p class="text-white">Failed to load page: ${err.message}</p>`;
     }
