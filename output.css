@@ -996,6 +996,12 @@
   .bg-\[\#00B3B3\] {
     background-color: #00B3B3;
   }
+  .bg-\[\#009999\] {
+    background-color: #009999;
+  }
+  .bg-\[\#C0C0C0\] {
+    background-color: #C0C0C0;
+  }
   .bg-\[\#E9E9E9\] {
     background-color: #E9E9E9;
   }
@@ -1127,6 +1133,9 @@
   }
   .py-30 {
     padding-block: calc(var(--spacing) * 30);
+  }
+  .py-124 {
+    padding-block: calc(var(--spacing) * 124);
   }
   .pt-2 {
     padding-top: calc(var(--spacing) * 2);
@@ -1410,10 +1419,24 @@
       display: block;
     }
   }
+  .hover\:bg-\[\#007777\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #007777;
+      }
+    }
+  }
   .hover\:bg-\[\#009999\] {
     &:hover {
       @media (hover: hover) {
         background-color: #009999;
+      }
+    }
+  }
+  .hover\:bg-\[\#C0C0C0\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #C0C0C0;
       }
     }
   }

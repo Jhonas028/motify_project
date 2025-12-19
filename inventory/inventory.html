@@ -5,35 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory</title>
-   <link href="./output.css" rel="stylesheet">
+    <link href="../output.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<nav class="bg-white shadow-md px-6 py-4 flex flex-row gap-7 font-[Poppins]">
-    <a href="#" data-page="/inventory/products/products.html"
-       class="nav-link hover:text-[#009999] font-semibold
+    <nav class="bg-white shadow-md px-6 py-4 flex flex-row gap-7 font-[Poppins]">
+        <a href="#" data-page="/inventory/products/products.html" class="nav-link hover:text-[#009999] font-semibold
               underline decoration-[#FF0000]
               decoration-4 underline-offset-8">
-        PRODUCTS
-    </a>
+            PRODUCTS
+        </a>
 
-    <a href="#" data-page="/inventory/warehouse/warehouse.html"
-       class="nav-link text-gray-700 hover:text-[#009999] font-semibold underline decoration-[#FF0000]
+        <a href="#" data-page="/inventory/warehouse/warehouse.html" class="nav-link text-gray-700 hover:text-[#009999] font-semibold underline decoration-[#FF0000]
               decoration-4 underline-offset-8">
-        WAREHOUSE
-    </a>
+            WAREHOUSE
+        </a>
 
-    <a href="#" data-page="/inventory/reports/reports.html"
-       class="nav-link text-gray-700 hover:text-[#009999] font-semibold underline decoration-[#FF0000]
+        <a href="#" data-page="/inventory/reports/reports.html" class="nav-link text-gray-700 hover:text-[#009999] font-semibold underline decoration-[#FF0000]
               decoration-4 underline-offset-8">
-        REPORT
-    </a>
-</nav>
+            REPORT
+        </a>
 
-<main id="inventoryMain" class="mt-8 p-8 min-h-screen rounded-lg shadow-xl">
-    Loading...
-</main>
+        <!-- Buttons container pushed to right -->
+        <div id="productButtons" class="ml-auto flex gap-2">
+            <button
+                class="bg-[#C0C0C0] text-black px-4 py-2 rounded hover:bg-[#007777] transition-colors flex items-center gap-2">
+                <img src="../Images/icon/ic_export.png" alt="Export Icon" class="w-5 h-5">
+                Export
+            </button>
+
+            <button
+                class="bg-[#C0C0C0] text-black px-4 py-2 rounded hover:bg-[#007777] transition-colors flex items-center gap-2">
+                <img src="../Images/icon/ic_import.png" alt="Import Icon" class="w-5 h-5">
+                Import
+            </button>
+ 
+            <button
+                class="bg-[#009999] text-white px-4 py-2 rounded hover:bg-[#007777] transition-colors flex items-center gap-2 ml-6">
+                <img src="../Images/icon/ic_add.png" alt="Add Icon" class="w-5 h-5">
+                Add Products
+            </button>
+        </div>
+
+    </nav>
+
+    <main id="inventoryMain" class="mt-8 p-8 min-h-screen rounded-lg shadow-xl">
+        Loading...
+    </main>
 
 
 
