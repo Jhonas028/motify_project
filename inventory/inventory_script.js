@@ -1,6 +1,7 @@
 // inventory_script.js — idempotent and resilient to DOM replacements
 console.log('inventory_script.js loaded');
 
+
 // Load a subpage fragment into the inventory container
 async function loadInventorySubPage(filePath) {
     try {
@@ -56,3 +57,5 @@ document.addEventListener('click', (e) => {
         first.classList.add('text-[#009999]', 'underline');
     }
 })();
+
+

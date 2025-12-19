@@ -25,11 +25,15 @@ burgerBtn.addEventListener("click", () => {
     }
 
     // Animate burger to X
-    lines[0].classList.toggle("rotate-45");
-    lines[0].classList.toggle("translate-y-1.5");
+    lines[0].classList.toggle("rotate-55");
+    lines[0].classList.toggle("translate-y-1");
+    lines[0].classList.toggle("ml-1.5"); 
+
     lines[1].classList.toggle("opacity-0");
-    lines[2].classList.toggle("-rotate-45");
-    lines[2].classList.toggle("-translate-y-1.5");
+    lines[2].classList.toggle("-rotate-55");
+    lines[2].classList.toggle("-translate-y-1");
+
+    lines[2].classList.toggle("ml-1.5"); 
 });
 
 // Function to load a page into main
