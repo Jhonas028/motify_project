@@ -2,92 +2,100 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>landing page</title>
-    <link href="./output.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <link href="/src/output.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 font-[Poppins]">
+<body class="font-poppins flex min-h-screen bg-gray-100">
 
-    <!-- Sidebar -->
-    <div id="burger-menu"
-        class="fixed top-0 left-0 h-full w-64 bg-black shadow-md px-4 py-24 space-y-4 transform -translate-x-full transition-transform duration-300 z-50 font-[Poppins]">
-        <a href="#" data-page="/dashboard/dashboard.html" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
-            <img src="../Images/icon/ic_dashboard.png" alt="Dashboard Icon" class="w-4 h-4 ">
-            Dashboard
-        </a>
-        <a href="#" data-page="/inventory/inventory.html" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
-            <img src="../Images/icon/ic_inventory.png" alt="Inventory Icon" class="w-4 h-4">
-            Inventory
-        </a>
+    <header class="fixed top-0 left-0 right-0 h-16 bg-white shadow flex items-center px-6 z-50">
 
-        <a href="#" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
-            <img src="../Images/icon/ic_pos.png" alt="Sales & POS Icon" class="w-4 h-4">
-            Sales & POS
-        </a>
-
-        <a href="#" data-page="/accounting/accounting.html" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
-            <img src="../Images/icon/ic_accounting.png" alt="Accounting Icon" class="w-4 h-4">
-            Accounting
-        </a>
-
-        <a href="#" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
-            <img src="../Images/icon/ic_hr.png" alt="HR & Payroll Icon" class="w-4 h-4">
-            HR & Payroll
-        </a>
-
-        <a href="#" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
-            <img src="../Images/icon/ic_reports.png" alt="Reports Icon" class="w-4 h-4">
-            Reports
-        </a>
-
-        <a href="#" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
-            <img src="../Images/icon/ic_accounts.png" alt="Accounts Icon" class="w-4 h-4">
-            Accounts
-        </a>
-
-        <a href="#" class="flex items-center gap-4 py-2 px-2 text-white hover:text-teal-500">
-            <img src="../Images/icon/ic_settings.png" alt="Settings Icon" class="w-4 h-4">
-            Settings
-        </a>
-    </div>
-
-    <!-- Main Content -->
-    <div class="flex">
-        <!-- Burger button fixed on top-left -->
-        <button id="burger-btn"
-            class="fixed top-6 left-7 z-50 w-8 h-8 flex flex-col justify-center items-center gap-1 focus:outline-none bg-white p-2 rounded shadow-xl">
+        <!-- Burger -->
+        <button id="burger-btn" class="w-10 h-10 flex flex-col justify-center items-center gap-1
+                   bg-white rounded shadow">
             <span class="burger-line block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
             <span class="burger-line block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
             <span class="burger-line block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
         </button>
+
+        <!-- Title -->
+        <h1 class="ml-4 text-lg font-bold text-gray-800">
+            Welcome to Centra Suite
+        </h1>
+
+        <!-- Right actions -->
+    <div class="ml-auto">
+        <img src="/Images/logo/centraSuite.png" class=" mt-4  h-25 rounded-full object-cover" />
     </div>
-
-    <header class="bg-white shadow-md fixed top-0 left-0 right-0 h-20 flex items-center px-4 py-2 z-40">
-        <!-- Optional: Burger button (if you want to toggle sidebar from header) -->
-        <!-- You can remove this if you already have a fixed burger button on the sidebar -->
-        <p class="text-xl font-bold ml-16 sm:block hidden">Welcome back, @username</p>
-
-        <!-- Right side: Profile or actions -->
-        <div class="ml-auto flex items-center space-x-4">
-            <img src="../Images/logo/logo2.jpg" alt="Profile" class="w-12 h-12 rounded-full object-cover">
-        </div>
     </header>
 
-    <!-- Spacer to avoid content hiding under fixed header -->
-    <div class="h-20"></div>
+    <aside id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-black shadow-md p-6 pt-20
+         transform -translate-x-full transition-transform duration-300
+         z-40">
 
-    <!-- Main content with violet background -->
-        <main id="main-content" class="flex-1 p-6 min-h-screen">
+        <button data-page="dashboard"
+            class="nav-btn w-full text-left flex items-center gap-3 py-2 px-3 rounded hover:bg-gray-700 text-white">
+            <img src="../Images/icon/ic_dashboard.png" alt="Dashboard Icon" class="w-4 h-4">
+            Dashboard
+        </button>
 
-        </main>
+        <button data-page="inventory"
+            class="nav-btn w-full text-left flex items-center gap-3 py-2 px-3 rounded hover:bg-gray-700 text-white">
+            <img src="../Images/icon/ic_inventory.png" alt="Inventory Icon" class="w-4 h-4">
+            Inventory
+        </button>
 
+        <button data-page="pos"
+            class="nav-btn w-full text-left flex items-center gap-3 py-2 px-3 rounded hover:bg-gray-700 text-white">
+            <img src="../Images/icon/ic_pos.png" alt="POS Icon" class="w-4 h-4">
+            POS
+        </button>
 
-    <script src="index_script.js"></script>
+        <button data-page="hr"
+            class="nav-btn w-full text-left flex items-center gap-3 py-2 px-3 rounded hover:bg-gray-700 text-white">
+            <img src="../Images/icon/ic_hr.png" alt="HR Icon" class="w-4 h-4">
+            HR
+        </button>
+        
+        <button data-page="reports"
+            class="nav-btn w-full text-left flex items-center gap-3 py-2 px-3 rounded hover:bg-gray-700 text-white">
+            <img src="../Images/icon/ic_reports.png" alt="Report Icon" class="w-4 h-4">
+            Reports
+        </button>
 
+        <button data-page="accounting"
+            class="nav-btn w-full text-left flex items-center gap-3 py-2 px-3 rounded hover:bg-gray-700 text-white">
+            <img src="../Images/icon/ic_accounting.png" alt="Accounting Icon" class="w-4 h-4">
+            Accounting
+        </button>
 
+        <button data-page="accounts"
+            class="nav-btn w-full text-left flex items-center gap-3 py-2 px-3 rounded hover:bg-gray-700 text-white">
+            <img src="../Images/icon/ic_accounts.png" alt="Accounts Icon" class="w-4 h-4">
+            Accounts
+        </button>
+
+        <button data-page="settings"
+            class="nav-btn w-full text-left flex items-center gap-3 py-2 px-3 rounded hover:bg-gray-700 text-white">
+            <img src="../Images/icon/ic_settings.png" alt="Settings Icon" class="w-4 h-4">
+            Settings
+        </button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main id="mainContent" class="min-h-screen min-w-full flex flex-col bg-gray-50 p-8 transition-all duration-300">
+        <!-- Loaded HTML will appear here -->
+    </main>
+
+    <script type="module" src="js/script.js"></script>
 </body>
 
 </html>
